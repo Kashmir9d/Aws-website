@@ -1,6 +1,7 @@
 type Message @model {
   id: ID!
-  name: String!
-  description: String
-  image: String
+  userId: String!
+  email: String!
+  subject: String
+  body: String
 }

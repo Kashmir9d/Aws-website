@@ -1,69 +1,103 @@
 import React, { useState, useEffect } from 'react';
 import { withAuthenticator } from '@aws-amplify/ui-react';
-import { API, Storage } from 'aws-amplify';
+import { API, Auth, Storage } from 'aws-amplify';
 import { listMessages } from '../graphql/queries';
 import { createMessage as createMessageMutation, deleteMessage as deleteMessageMutation } from '../graphql/mutations';
+import { Button, FormControl, InputGroup } from 'react-bootstrap';
 
-const initialFormState = { name: '', description: '' }
-
-
-
-function AddMessage(props){
-    const [Messages, setMessages] = useState([]);
-    const [formData, setFormData] = useState(initialFormState);
-
-    async function onChange(e) {
-        if (!e.target.files[0]) return
-        const file = e.target.files[0];
-        setFormData({ ...formData, image: file.name });
-        await Storage.put(file.name, file);
-        fetchMessages();
-      }
-
-      async function fetchMessages() {
-        const apiData = await API.graphql({ query: listMessages });
-        const messagesFromAPI = apiData.data.listMessages.items;
-        await Promise.all(messagesFromAPI.map(async message => {
-          if (message.image) {
-            const image = await Storage.get(message.image);
-            message.image = image;
-          }
-          return message;
-        }))
-        setMessages(apiData.data.listMessages.items);
-      }
-
-      async function createMessage() {
-        if (!formData.name || !formData.description) return;
-        await API.graphql({ query: createMessageMutation, variables: { input: formData } });
-        if (formData.image) {
-          const image = await Storage.get(formData.image);
-          formData.image = image;
-        }
-        setMessages([ ...Messages, formData ]);
-        setFormData(initialFormState);
-      }
+const initialFormState = { userId: '', email: '', subject: '', body: '' }
 
 
-    return (
-      <div className="App">
-      <input
-        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Message name"
-        value={formData.name}
-      />
-      <input
-        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Message description"
-        value={formData.description}
-      />
-      <input
-        type="file"
-        onChange={onChange}
-      />
-      <button onClick={createMessage}>Create Message</button>
-      </div>
-    )
+
+function AddMessage(props) {
+  const [Messages, setMessages] = useState([]);
+  const [formData, setFormData] = useState(initialFormState);
+  var userEmail = '';
+  useEffect(() => {
+    Auth.currentAuthenticatedUser({
+      bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+    }).then(user => setFormData({ ...formData, 'userId': user.attributes.email }))
+      .catch(err => console.log(err));
+    //setFormData({ ...formData, 'userId': "test"})
+  }, []);
+
+
+  async function createMessage() {
+    if (!formData.email) {
+      console.log("No email address");
+      return;
+    }
+
+
+    console.log(formData);
+    await API.graphql({ query: createMessageMutation, variables: { input: formData } });
+    //if (formData.image) {
+    //  const image = await Storage.get(formData.image);
+    //  formData.image = image;
+    // }
+    setMessages([...Messages, formData]);
+    setFormData(initialFormState);
   }
 
-  export default withAuthenticator(AddMessage);
+
+
+  return (
+    <div className="App">
+      <InputGroup className="mb-3">
+        <InputGroup.Prepend>
+          <InputGroup.Text id="basic-addon1">Email: </InputGroup.Text>
+        </InputGroup.Prepend>
+        <FormControl
+          onChange={e => setFormData({ ...formData, 'email': e.target.value })}
+          placeholder="name@provider.com"
+          value={formData.email}
+        />
+      </InputGroup>
+
+      <InputGroup className="mb-3">
+        <InputGroup.Prepend>
+          <InputGroup.Text id="basic-addon1">Subject: </InputGroup.Text>
+        </InputGroup.Prepend>
+        <FormControl
+          onChange={e => setFormData({ ...formData, 'subject': e.target.value })}
+          placeholder="Subject"
+          value={formData.subject}
+        />
+      </InputGroup>
+      <InputGroup className="mb-3">
+        <InputGroup.Prepend>
+          <InputGroup.Text id="basic-addon1">Message: </InputGroup.Text>
+        </InputGroup.Prepend>
+        <FormControl as="textarea"
+          onChange={e => setFormData({ ...formData, 'body': e.target.value })}
+          placeholder="Message..."
+          value={formData.body}
+        />
+      </InputGroup>
+
+
+
+      <Button onClick={createMessage}>Send Message</Button>
+    </div>
+  )
+}
+
+export default withAuthenticator(AddMessage);
+
+  //Saving File Addition Code
+/*
+<FormControl
+          type="file"
+          onChange={onChange}
+        />
+
+ async function onChange(e) {
+      if (!e.target.files[0]) return
+      const file = e.target.files[0];
+      setFormData({ ...formData, image: file.name });
+      await Storage.put(file.name, file);
+      fetchMessages();
+    }
+
+
+    */

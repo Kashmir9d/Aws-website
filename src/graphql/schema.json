@@ -101,7 +101,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "name",
+          "name" : "userId",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -116,7 +116,22 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "description",
+          "name" : "email",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "subject",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -127,7 +142,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "image",
+          "name" : "body",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -249,7 +264,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "name",
+          "name" : "userId",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -258,7 +273,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "email",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -267,7 +282,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "image",
+          "name" : "subject",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "body",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -850,7 +874,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "name",
+          "name" : "userId",
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -863,7 +887,20 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "email",
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "subject",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -872,7 +909,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "image",
+          "name" : "body",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -890,7 +927,7 @@
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
-          "name" : "name",
+          "name" : "userId",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -899,7 +936,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "email",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -908,7 +945,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "image",
+          "name" : "subject",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "body",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -974,7 +1020,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "name",
+          "name" : "userId",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -983,7 +1029,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "email",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -992,7 +1038,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "image",
+          "name" : "subject",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "body",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -1067,25 +1122,6 @@
         "inputFields" : null,
         "interfaces" : [ ],
         "enumValues" : null,
-        "possibleTypes" : null
-      }, {
-        "kind" : "ENUM",
-        "name" : "ModelSortDirection",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : [ {
-          "name" : "ASC",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "DESC",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        } ],
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
@@ -1328,6 +1364,25 @@
         } ],
         "interfaces" : null,
         "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "ENUM",
+        "name" : "ModelSortDirection",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : null,
+        "interfaces" : null,
+        "enumValues" : [ {
+          "name" : "ASC",
+          "description" : null,
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "DESC",
+          "description" : null,
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        } ],
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
