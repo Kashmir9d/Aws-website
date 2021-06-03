@@ -4,6 +4,7 @@ import { API, Storage } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listMessages } from './graphql/queries';
 import { createMessage as createMessageMutation, deleteMessage as deleteMessageMutation } from './graphql/mutations';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 
 const initialFormState = { name: '', description: '' }
@@ -54,9 +55,13 @@ function App() {
     await API.graphql({ query: deleteMessageMutation, variables: { input: { id } }});
   }
 
-  return (
-    <div className="App">
-      <h1>My Messages App</h1>
+  function Header(props) {
+    return <h1>My Messages App</h1>
+  }
+
+  function AddMessages(props){
+    return (
+      <div className="App">
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
         placeholder="Message name"
@@ -72,6 +77,12 @@ function App() {
         onChange={onChange}
       />
       <button onClick={createMessage}>Create Message</button>
+      </div>
+    )
+  }
+
+  function ViewMessages(props){
+    return (
       <div style={{marginBottom: 30}}>
         {
           Messages.map(Message => (
@@ -86,7 +97,42 @@ function App() {
           ))
         }
       </div>
+    )
+  }
+
+  function SignOut(props){
+    return (
       <AmplifySignOut />
+    )
+  }
+
+  function Error(props){
+    return <h1>Error!</h1>
+  }
+
+  function Navbar() {
+    return (
+      <div>
+        <Link to="/"> Home </Link>
+        <Link to="/addmessage"> Add Message </Link>
+        <Link to="/viewmessages"> View Messages </Link>
+        <Link to="/signout"> Signout </Link>
+      </div>
+    )
+  }
+
+  return (
+    <div className="App">
+      <h1>Douglas Davies</h1>
+      <h2>Professional Software Engineer</h2>
+      <Navbar/>
+      <Switch>
+        <Route path="/" component={Header} exact />
+        <Route path="/addmessage" component={AddMessages} />
+        <Route path="/viewmessages" component={ViewMessages} />
+        <Route path="/signout" component={SignOut} />
+        <Route component={Error} />
+      </Switch>
     </div>
   );
 }
