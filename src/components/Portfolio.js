@@ -12,29 +12,36 @@ function Portfolio(props) {
         <div style={{ alignSelf: 'center' }}>
         <Carousel activeIndex={index} onSelect={handleSelect} >
             <Carousel.Item  >
-                <Card class="d-block mx-auto" style={{ width: '30%'}} >
-                    <Card.Img variant="top" src="images/Scoreboard1.jpg" />
-                    <Card.Body>
-                        <Card.Title>"Scoreboard" - factory progress and productivity metrics reporting</Card.Title>
-                        <Card.Text>
-                            Custom designed system 
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block mx-auto"
-                    src="images/Scoreboard1.jpg"
+            <img
+                    className="d-block w-100"
+                    src="images/T2.jpg"
                     alt="Second slide"
-                    style={{ width: '30%'}} 
+                    style={{ width: '50%', paddingRight: '15%', paddingLeft: '15%', paddingBottom: '10%'}} 
                 />
 
                 <Carousel.Caption>
-                    <h3>"Scoreboard" - factory progress and productivity metrics reporting</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h1>"Scoreboard" - factory progress and productivity metrics reporting</h1>
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
                 </Carousel.Caption>
             </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src="images/Scoreboard1.jpg"
+                    alt="Second slide"
+                    style={{ width: '50%', paddingRight: '15%', paddingLeft: '15%', paddingBottom: '10%'}} 
+                />
+
+                <Carousel.Caption>
+                    <h1>"Scoreboard" - factory progress and productivity metrics reporting</h1>
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                </Carousel.Caption>
+            </Carousel.Item>
+            
             <Carousel.Item>
                 <img
                     className="d-block w-100"
