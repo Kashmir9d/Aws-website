@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { withAuthenticator } from '@aws-amplify/ui-react';
-import { API, Storage } from 'aws-amplify';
+import { API, Auth, Storage } from 'aws-amplify';
 import { listMessages } from '../graphql/queries';
 import { createMessage as createMessageMutation, deleteMessage as deleteMessageMutation } from '../graphql/mutations';
 import { Card, Button, Container, CardDeck, Accordion } from 'react-bootstrap';
@@ -9,12 +9,31 @@ import { Card, Button, Container, CardDeck, Accordion } from 'react-bootstrap';
 
 function ViewMessages(props) {
     const [Messages, setMessages] = useState([]);
+    const [UserId, setUserId] = useState('');
+
     useEffect(() => {
         fetchMessages();
     }, []);
+    
+    async function getUserId() {
+        const user = await Auth.currentAuthenticatedUser({
+            bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+          })
+         return user.attributes.email
+    }
 
     async function fetchMessages() {
-        const apiData = await API.graphql({ query: listMessages });
+        const thisUserId = await getUserId();
+        console.log("Fetching messages with: " + thisUserId)
+        let filter = {
+            userId: {
+                eq: thisUserId
+            }
+        }
+        if (thisUserId == 'doug.davies9d@gmail.com' ){
+            filter = null;
+        }
+        const apiData = await API.graphql({ query: listMessages, variables: {filter: filter} });
         const messagesFromAPI = apiData.data.listMessages.items;
         setMessages(apiData.data.listMessages.items);
     }
