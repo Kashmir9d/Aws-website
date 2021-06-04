@@ -16,14 +16,13 @@ function HomePage(props) {
             <p>
                 I have worked in large organizations with established products as well as startups developing entirely 
                 new technologies from the ground up - different environments include unqiue and interesting challenges, but the need for care and precision 
-                is common to engineering throughout.n
+                is common to engineering throughout.
             </p>
             </Container>
-        <div className="fixed-bottom">
-            <Container>
+
+            <Container className="fixed-bottom">
                 <h2>“Before enlightenment; chop wood, carry water. After enlightenment; chop wood, carry water.” — Zen Kōan </h2>
             </Container>
-        </div>
         </div>
     )
 };

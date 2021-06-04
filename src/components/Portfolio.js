@@ -10,13 +10,13 @@ function Portfolio(props) {
 
     return (
         <div style={{ alignSelf: 'center' }}>
-        <Carousel activeIndex={index} onSelect={handleSelect} >
+        <Carousel activeIndex={index} onSelect={handleSelect} indicators={false} >
             <Carousel.Item  >
             <img
                     className="d-block w-100"
                     src="images/T2.jpg"
                     alt="Second slide"
-                    style={{ width: '50%', paddingRight: '15%', paddingLeft: '15%', paddingBottom: '10%'}} 
+                    style={{paddingRight: '10%', paddingLeft: '10%', paddingBottom: '10%'}} 
                 />
 
                 <Carousel.Caption>
@@ -31,7 +31,7 @@ function Portfolio(props) {
                     className="d-block w-100"
                     src="images/Scoreboard1.jpg"
                     alt="Second slide"
-                    style={{ width: '50%', paddingRight: '15%', paddingLeft: '15%', paddingBottom: '10%'}} 
+                    style={{paddingRight: '10%', paddingLeft: '10%', paddingBottom: '10%'}} 
                 />
 
                 <Carousel.Caption>
@@ -45,7 +45,7 @@ function Portfolio(props) {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="holder.js/800x400?text=Third slide&bg=20232a"
+                    src="images/TrailorAutomation.jpg"
                     alt="Third slide"
                 />
 
