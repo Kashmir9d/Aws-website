@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import { Error} from './components/BasicComponents.js'
-import Header from './components/Header.js'
 import AddMessage from './components/AddMessage.js'
 import ViewMessages from './components/ViewMessages.js'
 import SignOut from './components/Signout.js'

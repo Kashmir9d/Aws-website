@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { withAuthenticator } from '@aws-amplify/ui-react';
-import { API, Auth, Storage } from 'aws-amplify';
-import { listMessages } from '../graphql/queries';
-import { createMessage as createMessageMutation, deleteMessage as deleteMessageMutation } from '../graphql/mutations';
+import { API, Auth} from 'aws-amplify';
+import { createMessage as createMessageMutation } from '../graphql/mutations';
 import { Button, FormControl, InputGroup } from 'react-bootstrap';
 
 const initialFormState = { userId: '', email: '', subject: '', body: '' }
@@ -12,7 +11,7 @@ const initialFormState = { userId: '', email: '', subject: '', body: '' }
 function AddMessage(props) {
   const [Messages, setMessages] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
-  var userEmail = '';
+
   useEffect(() => {
     Auth.currentAuthenticatedUser({
       bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
@@ -29,7 +28,6 @@ function AddMessage(props) {
     }
 
 
-    console.log(formData);
     await API.graphql({ query: createMessageMutation, variables: { input: formData } });
     //if (formData.image) {
     //  const image = await Storage.get(formData.image);

@@ -1,5 +1,5 @@
-import { Container, Carousel, Figure, Card } from 'react-bootstrap'
-import React, { useState, useEffect } from 'react';
+import {Carousel} from 'react-bootstrap'
+import React, { useState} from 'react';
 
 function Portfolio(props) {
     const [index, setIndex] = useState(0);
@@ -20,7 +20,7 @@ function Portfolio(props) {
                 />
 
                 <Carousel.Caption>
-                    <h1>"Scoreboard" - factory progress and productivity metrics reporting</h1>
+                    <h1>Automated, Self-Contained mobile factory for </h1>
                     <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
                     <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
                     <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>

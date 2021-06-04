@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { withAuthenticator } from '@aws-amplify/ui-react';
-import { API, Auth, Storage } from 'aws-amplify';
+import { API, Auth} from 'aws-amplify';
 import { listMessages } from '../graphql/queries';
-import { createMessage as createMessageMutation, deleteMessage as deleteMessageMutation } from '../graphql/mutations';
-import { Card, Button, Container, CardDeck, Accordion } from 'react-bootstrap';
+import {  deleteMessage as deleteMessageMutation } from '../graphql/mutations';
+import { Card, Button, Container, Accordion } from 'react-bootstrap';
 
 
 
 function ViewMessages(props) {
     const [Messages, setMessages] = useState([]);
-    const [UserId, setUserId] = useState('');
 
     useEffect(() => {
         fetchMessages();
@@ -22,15 +21,23 @@ function ViewMessages(props) {
          return user.attributes.email
     }
 
+    async function getUserGroup(){
+        const currentSession = await Auth.currentSession({
+            bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+          })
+          const userGroups = currentSession.getAccessToken().decodePayload()["cognito:groups"];
+          return userGroups.includes("Administrator");
+    }
+
     async function fetchMessages() {
         const thisUserId = await getUserId();
-        console.log("Fetching messages with: " + thisUserId)
+        const isAdmin = await getUserGroup();
         let filter = {
             userId: {
                 eq: thisUserId
             }
         }
-        if (thisUserId == 'doug.davies9d@gmail.com' ){
+        if (isAdmin){
             filter = null;
         }
         const apiData = await API.graphql({ query: listMessages, variables: {filter: filter} });
