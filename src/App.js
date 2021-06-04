@@ -7,6 +7,8 @@ import AddMessage from './components/AddMessage.js'
 import ViewMessages from './components/ViewMessages.js'
 import SignOut from './components/Signout.js'
 import HomePage from './components/HomePage.js'
+import Contact from './components/Contact.js'
+import Portfolio from './components/Portfolio.js'
 import {Button, Jumbotron} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -33,7 +35,6 @@ function App() {
     <div className="App">
       <Jumbotron fluid>
       <h1>Douglas Davies</h1>
-      <h2>Professional Software Engineer</h2>
       <Navbar/>
       </Jumbotron>
       
@@ -42,8 +43,8 @@ function App() {
         <Route path="/addmessage" component={AddMessage} />
         <Route path="/viewmessages" component={ViewMessages} />
         <Route path="/signout" component={SignOut} />
-        <Route path="/contact" />
-        <Route path="/portfolio" />
+        <Route path="/contact" component={Contact}/>
+        <Route path="/portfolio" component={Portfolio}/>
         <Route component={Error} />
       </Switch>
     </div>
