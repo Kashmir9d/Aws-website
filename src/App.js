@@ -8,7 +8,7 @@ import SignOut from './components/Signout.js'
 import HomePage from './components/HomePage.js'
 import Contact from './components/Contact.js'
 import Portfolio from './components/Portfolio.js'
-import {Button, Jumbotron} from 'react-bootstrap'
+import {Button, Jumbotron, Container} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -19,14 +19,14 @@ function App() {
 
   function Navbar() {
     return (
-      <div className="container-fluid">
+      <Container fluid display="flex" justifyContent="center">
         <Link to="/"> <Button>Home</Button> </Link> 
         <Link to="/portfolio"> <Button>Portfolio</Button> </Link> 
         <Link to="/contact"> <Button>Contact</Button> </Link> 
         <Link to="/addmessage"> <Button>Send Message</Button>  </Link>
         <Link to="/viewmessages"><Button> View Messages</Button> </Link> 
         <Link to="/signout"> <Button>Signout</Button> </Link> 
-      </div>
+      </Container>
     )
   }
 

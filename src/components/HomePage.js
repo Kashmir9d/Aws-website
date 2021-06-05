@@ -3,7 +3,7 @@ import {Container} from 'react-bootstrap'
 
 function HomePage(props) {
     return (
-        <div>
+        <Container fluid>
             <Container>
         <h2>Professional Software Engineer</h2>
         <p>I am deeply invested in the potential for engineering and software to act as a multiplier 
@@ -23,7 +23,7 @@ function HomePage(props) {
             <Container className="fixed-bottom">
                 <h2>“Before enlightenment; chop wood, carry water. After enlightenment; chop wood, carry water.” — Zen Kōan </h2>
             </Container>
-        </div>
+        </Container>
     )
 };
 

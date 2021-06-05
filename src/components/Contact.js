@@ -3,8 +3,7 @@ import {Container} from 'react-bootstrap'
 
 function Contact(props) {
     return (
-        <div>
-            <Container>
+            <Container fluid>
         <h2>Douglas Davies</h2>
         <br></br>
         <h3> (530) 320-1220</h3>       
@@ -17,7 +16,6 @@ function Contact(props) {
         </h4> 
         <h4>Or feel free to log in and message me through this website!</h4>
             </Container>
-        </div>
     )
 };
 
