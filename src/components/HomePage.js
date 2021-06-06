@@ -1,4 +1,5 @@
-import {Container} from 'react-bootstrap'
+
+import {Container, Alert} from 'react-bootstrap'
 
 
 function HomePage(props) {
@@ -18,10 +19,17 @@ function HomePage(props) {
                 new technologies from the ground up - different environments include unqiue and interesting challenges, but the need for care and precision 
                 is common to engineering throughout.
             </p>
+            <br/><br/><br/><br/><br/><br/><br/>
             </Container>
 
-            <Container className="fixed-bottom">
-                <h2>“Before enlightenment; chop wood, carry water. After enlightenment; chop wood, carry water.” — Zen Kōan </h2>
+            <Container>
+                <Alert variant="info">
+                    <Alert.Heading>“Before enlightenment; chop wood, carry water. After enlightenment; chop wood, carry water.”</Alert.Heading>
+                    <hr/>
+                    <p>
+                    — Zen Kōan 
+                    </p>
+                </Alert>
             </Container>
         </Container>
     )
