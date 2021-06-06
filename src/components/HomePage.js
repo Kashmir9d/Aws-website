@@ -19,7 +19,7 @@ function HomePage(props) {
                 new technologies from the ground up - different environments include unqiue and interesting challenges, but the need for care and precision 
                 is common to engineering throughout.
             </p>
-            <br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/>
             </Container>
 
             <Container>

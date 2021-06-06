@@ -17,56 +17,58 @@ function Portfolio(props) {
                         <Card.Header><h3>Mobile Factory - Composites for Infrastructure</h3></Card.Header>
                         <Card.Img variant="top" src="images/T2.jpg" style={{ paddingRight: '5%', paddingLeft: '5%' }}/>
                         <Card.Body>
-                            <Card.Title>Mobile Factory - Composites for Infrastructure</Card.Title>
+                            <Card.Title>Automated "mobile factory" work trailer for composite materials work.</Card.Title>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroupItem>Custom designed software-controlled automated work trailer for composite materials infrastructure repairs</ListGroupItem>                            
-                            <ListGroupItem>Software defined PLC controlling on-board equipment</ListGroupItem>
+                            <ListGroupItem>Custom designed software-controlled automated work trailer for infrastructure repairs composite materials.</ListGroupItem>                            
+                            <ListGroupItem>Software defined PLC controlling on-board equipment.</ListGroupItem>
+                            <ListGroupItem>All software and hardware controls custom designed and implemented from first version through several iterations in full production. </ListGroupItem>
                         </ListGroup>
                     </Card>
                 </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="images/Scoreboard1.jpg"
-                        alt="Second slide"
-                        style={{ paddingRight: '10%', paddingLeft: '10%', paddingBottom: '10%' }}
-                    />
-
-                    <Carousel.Caption>
-                        <h1>"Scoreboard" - factory progress and productivity metrics reporting</h1>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                    </Carousel.Caption>
-                </Carousel.Item>
-
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="images/TrailorAutomation.jpg"
-                        alt="Third slide"
-                    />
-
-                    <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                </p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item style={{ paddingRight: '10%', paddingLeft: '10%' }}>
+                <Carousel.Item style={{ paddingRight: '30%', paddingLeft: '30%' }}>
                     <Card className="d-block w-100" style={{ padding: '1%' }}>
 
-                        <Card.Header>Mobile Factory - Composites for Infrastructure</Card.Header>
-                        <Card.Img variant="top" src="images/TrailorAutomation.jpg" />
+                        <Card.Header><h3>Mobile Factory - Composites for Infrastructure</h3></Card.Header>
+                        <Card.Img variant="top" src="images/TrailorAutomation.jpg" style={{ paddingRight: '5%', paddingLeft: '5%' }}/>
                         <Card.Body>
-                            <Card.Title>Mobile Factory - Composites for Infrastructure</Card.Title>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
+                            <Card.Title>Automated "mobile factory" work trailer for composite materials work.</Card.Title>
                         </Card.Body>
+                        <ListGroup className="list-group-flush">
+                            <ListGroupItem>Automated system for dosing catalyst and mixing composite materials to specified requirements.</ListGroupItem>                            
+                            <ListGroupItem>Accurate dosing, mixing, material storage, and logging based on barcoded material packaging.</ListGroupItem>
+                            <ListGroupItem>Data-assisted quality assurance, job progress and material usage reporting, remote progress reporting. </ListGroupItem>
+                        </ListGroup>
+                    </Card>
+                </Carousel.Item>
+                <Carousel.Item style={{ paddingRight: '30%', paddingLeft: '30%' }}>
+                    <Card className="d-block w-100" style={{ padding: '1%' }}>
+
+                        <Card.Header><h3>Scoreboard - Composites for Infrastructure</h3></Card.Header>
+                        <Card.Img variant="top" src="images/Scoreboard1.jpg" style={{ paddingRight: '5%', paddingLeft: '5%' }}/>
+                        <Card.Body>
+                            <Card.Title>Production scheduling and progress reporting. </Card.Title>
+                        </Card.Body>
+                        <ListGroup className="list-group-flush">
+                            <ListGroupItem>Custom built system for real-time schedule, progress, and KPI metrics reporting.</ListGroupItem>                            
+                            <ListGroupItem>Integrated data from ERP system, scheduling system, and factory equipment feedback.</ListGroupItem>
+                            <ListGroupItem>Real-time feedback between factory floor and front office demonstrating significant productivity improvements. </ListGroupItem>
+                        </ListGroup>
+                    </Card>
+                </Carousel.Item>
+                <Carousel.Item style={{ paddingRight: '30%', paddingLeft: '30%' }}>
+                    <Card className="d-block w-100" style={{ padding: '1%' }}>
+
+                        <Card.Header><h3>Production Line Automation - Composites for Infrastructure</h3></Card.Header>
+                        <Card.Img variant="top" src="images/ConveyorRedesign.jpg" style={{ paddingRight: '5%', paddingLeft: '5%' }}/>
+                        <Card.Body>
+                            <Card.Title>Resigned and automated production. </Card.Title>
+                        </Card.Body>
+                        <ListGroup className="list-group-flush">
+                            <ListGroupItem>Analyzed and residgned production process to utilize aution and powered conveyors.</ListGroupItem>                            
+                            <ListGroupItem>Designed and implemented PLC controls, sensors, and software integration/reporting.</ListGroupItem>
+                            <ListGroupItem>Refined process and repeated improvements for multiple production lines. </ListGroupItem>
+                        </ListGroup>
                     </Card>
                 </Carousel.Item>
             </Carousel>
