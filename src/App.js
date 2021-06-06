@@ -9,6 +9,7 @@ import SignOut from './components/Signout.js'
 import HomePage from './components/HomePage.js'
 import Contact from './components/Contact.js'
 import Portfolio from './components/Portfolio.js'
+import Resume from './components/Resume.js'
 import {Button, Jumbotron, Container} from 'react-bootstrap'
 
 
@@ -23,7 +24,8 @@ function App() {
       <Container fluid display="flex" justifyContent="center" alignContent= "space-between">
         <Button className="m-1" href="/" margin="10px">Home</Button> 
          <Button className="m-1" href="/portfolio">Portfolio</Button>  
-        <Button className="m-1" href="/contact">Contact</Button> 
+        <Button className="m-1" href="/contact">Contact</Button>   
+        <Button className="m-1" href="/resume">Resume</Button> 
         <Button className="m-1" href="/addmessage">Send Message</Button> 
         <Button className="m-1" href="/viewmessages"> View Messages</Button>
          <Button className="m-1" href="/signout">Signout</Button> 
@@ -45,6 +47,7 @@ function App() {
         <Route path="/signout" component={SignOut} />
         <Route path="/contact" component={Contact}/>
         <Route path="/portfolio" component={Portfolio}/>
+        <Route path="/resume" component={Resume}/>
         <Route component={Error} />
       </Switch>
     </div>
