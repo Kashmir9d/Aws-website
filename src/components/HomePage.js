@@ -23,7 +23,7 @@ function HomePage(props) {
             </Container>
 
             <Container>
-                <Alert variant="info">
+                <Alert variant="dark">
                     <Alert.Heading>“Before enlightenment; chop wood, carry water. After enlightenment; chop wood, carry water.”</Alert.Heading>
                     <hr/>
                     <p>

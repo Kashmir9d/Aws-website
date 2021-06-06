@@ -1,5 +1,7 @@
 import { Carousel, Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 import React, { useState } from 'react';
+import '../App.css';
+import '../index.css'
 
 function Portfolio(props) {
     const [index, setIndex] = useState(0);
@@ -8,14 +10,15 @@ function Portfolio(props) {
         setIndex(selectedIndex);
     };
 
+
     return (
         <div style={{ alignSelf: 'center' }}>
             <Carousel activeIndex={index} onSelect={handleSelect} indicators={false} >
-                <Carousel.Item style={{ paddingRight: '30%', paddingLeft: '30%' }}>
+                <Carousel.Item>
                     <Card className="d-block w-100" style={{ padding: '1%' }}>
 
                         <Card.Header><h3>Mobile Factory - Composites for Infrastructure</h3></Card.Header>
-                        <Card.Img variant="top" src="images/T2.jpg" style={{ paddingRight: '5%', paddingLeft: '5%' }}/>
+                        <Card.Img variant="top" src="images/T2.jpg"/>
                         <Card.Body>
                             <Card.Title>Automated "mobile factory" work trailer for composite materials work.</Card.Title>
                         </Card.Body>
@@ -26,11 +29,11 @@ function Portfolio(props) {
                         </ListGroup>
                     </Card>
                 </Carousel.Item>
-                <Carousel.Item style={{ paddingRight: '30%', paddingLeft: '30%' }}>
+                <Carousel.Item>
                     <Card className="d-block w-100" style={{ padding: '1%' }}>
 
                         <Card.Header><h3>Mobile Factory - Composites for Infrastructure</h3></Card.Header>
-                        <Card.Img variant="top" src="images/TrailorAutomation.jpg" style={{ paddingRight: '5%', paddingLeft: '5%' }}/>
+                        <Card.Img variant="top" src="images/TrailorAutomation.jpg"/>
                         <Card.Body>
                             <Card.Title>Automated "mobile factory" work trailer for composite materials work.</Card.Title>
                         </Card.Body>
@@ -41,11 +44,11 @@ function Portfolio(props) {
                         </ListGroup>
                     </Card>
                 </Carousel.Item>
-                <Carousel.Item style={{ paddingRight: '30%', paddingLeft: '30%' }}>
+                <Carousel.Item>
                     <Card className="d-block w-100" style={{ padding: '1%' }}>
 
                         <Card.Header><h3>Scoreboard - Composites for Infrastructure</h3></Card.Header>
-                        <Card.Img variant="top" src="images/Scoreboard1.jpg" style={{ paddingRight: '5%', paddingLeft: '5%' }}/>
+                        <Card.Img variant="top" src="images/Scoreboard1.jpg"/>
                         <Card.Body>
                             <Card.Title>Production scheduling and progress reporting. </Card.Title>
                         </Card.Body>
@@ -56,11 +59,11 @@ function Portfolio(props) {
                         </ListGroup>
                     </Card>
                 </Carousel.Item>
-                <Carousel.Item style={{ paddingRight: '30%', paddingLeft: '30%' }}>
+                <Carousel.Item>
                     <Card className="d-block w-100" style={{ padding: '1%' }}>
 
                         <Card.Header><h3>Production Line Automation - Composites for Infrastructure</h3></Card.Header>
-                        <Card.Img variant="top" src="images/ConveyorRedesign.jpg" style={{ paddingRight: '5%', paddingLeft: '5%' }}/>
+                        <Card.Img variant="top" src="images/ConveyorRedesign.jpg"/>
                         <Card.Body>
                             <Card.Title>Resigned and automated production. </Card.Title>
                         </Card.Body>

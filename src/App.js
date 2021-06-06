@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Route, Switch, Link } from 'react-router-dom';
 import { Error} from './components/BasicComponents.js'
@@ -9,7 +10,7 @@ import HomePage from './components/HomePage.js'
 import Contact from './components/Contact.js'
 import Portfolio from './components/Portfolio.js'
 import {Button, Jumbotron, Container} from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
@@ -19,13 +20,13 @@ function App() {
 
   function Navbar() {
     return (
-      <Container fluid display="flex" justifyContent="center">
-        <Link to="/"> <Button>Home</Button> </Link> 
-        <Link to="/portfolio"> <Button>Portfolio</Button> </Link> 
-        <Link to="/contact"> <Button>Contact</Button> </Link> 
-        <Link to="/addmessage"> <Button>Send Message</Button>  </Link>
-        <Link to="/viewmessages"><Button> View Messages</Button> </Link> 
-        <Link to="/signout"> <Button>Signout</Button> </Link> 
+      <Container fluid display="flex" justifyContent="center" alignContent= "space-between">
+        <Button className="m-1" href="/" margin="10px">Home</Button> 
+         <Button className="m-1" href="/portfolio">Portfolio</Button>  
+        <Button className="m-1" href="/contact">Contact</Button> 
+        <Button className="m-1" href="/addmessage">Send Message</Button> 
+        <Button className="m-1" href="/viewmessages"> View Messages</Button>
+         <Button className="m-1" href="/signout">Signout</Button> 
       </Container>
     )
   }
