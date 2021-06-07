@@ -65,10 +65,10 @@ function Portfolio(props) {
                         <Card.Header><h3>Production Line Automation - Composites for Infrastructure</h3></Card.Header>
                         <Card.Img variant="top" src="images/ConveyorRedesign.jpg"/>
                         <Card.Body>
-                            <Card.Title>Resigned and automated production. </Card.Title>
+                            <Card.Title>Redesigned and automated production. </Card.Title>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroupItem>Analyzed and residgned production process to utilize aution and powered conveyors.</ListGroupItem>                            
+                            <ListGroupItem>Analyzed and redesigned production process to utilize automated powered conveyors.</ListGroupItem>                            
                             <ListGroupItem>Designed and implemented PLC controls, sensors, and software integration/reporting.</ListGroupItem>
                             <ListGroupItem>Refined process and repeated improvements for multiple production lines. </ListGroupItem>
                         </ListGroup>
