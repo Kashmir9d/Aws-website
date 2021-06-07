@@ -22,13 +22,13 @@ function App() {
   function Navbar() {
     return (
       <Container fluid display="flex" justifyContent="center" alignContent= "space-between">
-        <Button className="m-1" href="/" margin="10px">Home</Button> 
-         <Button className="m-1" href="/portfolio">Portfolio</Button>  
-        <Button className="m-1" href="/contact">Contact</Button>   
-        <Button className="m-1" href="/resume">Resume</Button> 
-        <Button className="m-1" href="/addmessage">Send Message</Button> 
-        <Button className="m-1" href="/viewmessages"> View Messages</Button>
-         <Button className="m-1" href="/signout">Signout</Button> 
+        <Button className="m-1" variant="info" href="/">Home</Button> 
+         <Button className="m-1" variant="info" href="/portfolio">Portfolio</Button>  
+        <Button className="m-1" variant="info" href="/contact">Contact</Button>   
+        <Button className="m-1" variant="info" href="/resume">Resume</Button> 
+        <Button className="m-1" variant="info" href="/addmessage">Send Message</Button> 
+        <Button className="m-1" variant="info" href="/viewmessages"> View Messages</Button>
+         <Button className="m-1" variant="info" href="/signout">Signout</Button> 
       </Container>
     )
   }

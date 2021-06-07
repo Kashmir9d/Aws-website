@@ -23,9 +23,9 @@ function Portfolio(props) {
                             <Card.Title>Automated "mobile factory" work trailer for composite materials work.</Card.Title>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroupItem>Custom designed software-controlled automated work trailer for infrastructure repairs composite materials.</ListGroupItem>                            
+                            <ListGroupItem>Custom designed software-controlled automated work trailer for infrastructure repairs using composite materials.</ListGroupItem>                            
                             <ListGroupItem>Software defined PLC controlling on-board equipment.</ListGroupItem>
-                            <ListGroupItem>All software and hardware controls custom designed and implemented from first version through several iterations in full production. </ListGroupItem>
+                            <ListGroupItem>All software and hardware controls designed in-house and implemented from first version through several iterations in full production. </ListGroupItem>
                         </ListGroup>
                     </Card>
                 </Carousel.Item>
@@ -40,7 +40,7 @@ function Portfolio(props) {
                         <ListGroup className="list-group-flush">
                             <ListGroupItem>Automated system for dosing catalyst and mixing composite materials to specified requirements.</ListGroupItem>                            
                             <ListGroupItem>Accurate dosing, mixing, material storage, and logging based on barcoded material packaging.</ListGroupItem>
-                            <ListGroupItem>Data-assisted quality assurance, job progress and material usage reporting, remote progress reporting. </ListGroupItem>
+                            <ListGroupItem>Data-assisted quality assurance, job progress and material usage reporting, and remote progress reporting. </ListGroupItem>
                         </ListGroup>
                     </Card>
                 </Carousel.Item>
@@ -54,8 +54,8 @@ function Portfolio(props) {
                         </Card.Body>
                         <ListGroup className="list-group-flush">
                             <ListGroupItem>Custom built system for real-time schedule, progress, and KPI metrics reporting.</ListGroupItem>                            
-                            <ListGroupItem>Integrated data from ERP system, scheduling system, and factory equipment feedback.</ListGroupItem>
-                            <ListGroupItem>Real-time feedback between factory floor and front office demonstrating significant productivity improvements. </ListGroupItem>
+                            <ListGroupItem>Integrated data from ERP system, scheduling system, and factory equipment to provide a comprehensive overview.</ListGroupItem>
+                            <ListGroupItem>Real-time feedback between factory floor and front office demonstrating significant productivity improvements on both sides. </ListGroupItem>
                         </ListGroup>
                     </Card>
                 </Carousel.Item>

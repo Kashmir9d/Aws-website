@@ -12,9 +12,9 @@ function Contact(props) {
         <h4>Austin, TX area</h4>
         <br/><br/>
         <h4>
-        <a href="mailto:doug.davies9d@gmail.com">Shoot Me An Email</a> 
-        </h4> 
-        <h4>Or feel free to log in and message me through this website!</h4>
+        <a class="text-info" href="mailto:doug.davies9d@gmail.com">Shoot Me An Email</a> 
+        </h4> <br/>
+        <h4>Or feel free to log in and message me through this website.</h4>
             </Container>
     )
 };
